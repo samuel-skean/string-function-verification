@@ -1,9 +1,9 @@
 From refinedc.typing Require Import typing.
-From refinedc.project.basic_checkin_example.failing_char_comparison Require Import generated_code.
-From refinedc.project.basic_checkin_example.failing_char_comparison Require Import generated_spec.
+From refinedc.project.basic_checkin_example.char_comparison Require Import generated_code.
+From refinedc.project.basic_checkin_example.char_comparison Require Import generated_spec.
 Set Default Proof Using "Type".
 
-(* Generated from [failing_char_comparison.c]. *)
+(* Generated from [char_comparison.c]. *)
 Section proof_equals_a.
   Context `{!typeG Σ} `{!globalG Σ}.
 

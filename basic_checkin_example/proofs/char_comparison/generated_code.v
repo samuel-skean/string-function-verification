@@ -3,9 +3,9 @@ From caesium Require Import tactics.
 From refinedc.typing Require Import annotations.
 Set Default Proof Using "Type".
 
-(* Generated from [failing_char_comparison.c]. *)
+(* Generated from [char_comparison.c]. *)
 Section code.
-  Definition file_0 : string := "failing_char_comparison.c".
+  Definition file_0 : string := "char_comparison.c".
   Definition loc_2 : location_info := LocationInfo file_0 7 4 7 19.
   Definition loc_3 : location_info := LocationInfo file_0 7 11 7 18.
   Definition loc_4 : location_info := LocationInfo file_0 7 11 7 12.
