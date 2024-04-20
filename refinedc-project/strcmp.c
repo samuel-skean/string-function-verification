@@ -14,15 +14,12 @@
    License along with the GNU C Library; if not, see
    <https://www.gnu.org/licenses/>.  */
 #include <string.h>
-#undef strcmp
-#ifndef STRCMP
-# define STRCMP strcmp
-#endif
+
 /* Compare S1 and S2, returning less than, equal to or
    greater than zero if S1 is lexicographically less than,
    equal to or greater than S2.  */
 int
-STRCMP (const char *p1, const char *p2)
+strcmp (const char *p1, const char *p2)
 {
   const unsigned char *s1 = (const unsigned char *) p1;
   const unsigned char *s2 = (const unsigned char *) p2;
@@ -32,9 +29,8 @@ STRCMP (const char *p1, const char *p2)
       c1 = (unsigned char) *s1++;
       c2 = (unsigned char) *s2++;
       if (c1 == '\0')
-	return c1 - c2;
+        return c1 - c2;
     }
   while (c1 == c2);
   return c1 - c2;
 }
-libc_hidden_builtin_def (strcmp)
