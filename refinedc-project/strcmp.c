@@ -18,6 +18,8 @@
 /* Compare S1 and S2, returning less than, equal to or
    greater than zero if S1 is lexicographically less than,
    equal to or greater than S2.  */
+[[rc::parameters("p1 : loc", "p2 : loc")]]
+[[rc::args("p1 @ &own<int<u8>>", "p2 @ &own<int<u8>>")]]
 int
 strcmp (const char *p1, const char *p2)
 {
