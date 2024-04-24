@@ -15,7 +15,6 @@ Compares the first @var{n} bytes of two strings, returning a value as
 
 */
 
-#include <ansidecl.h>
 #include <stddef.h>
 
 int
@@ -23,13 +22,17 @@ strncmp(const char *s1, const char *s2, register size_t n)
 {
   register unsigned char u1, u2;
 
-  while (n-- > 0)
+  while (n > 0)
     {
-      u1 = (unsigned char) *s1++;
-      u2 = (unsigned char) *s2++;
+      n--;
+      u1 = (unsigned char) *s1;
+      u2 = (unsigned char) *s2;
+      s1++;
+      s2++;
+
       if (u1 != u2)
         return u1 - u2;
-      if (u1 == '\0')
+      if (u1 == 0)
         return 0;
     }
   return 0;
