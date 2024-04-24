@@ -28,9 +28,8 @@ for(int i = 65; i <= 90; i++){
    greater than zero if S1 is lexicographically less than,
    equal to or greater than S2.  */
 [[rc::parameters("p1 : loc", "p2 : loc")]]
-[[rc::args("p1 @ &own<int<u8>>", "p2 @ &own<int<u8>>")]]
-
-
+[[rc::args("p1 @&own<array<u8, {elts `at_type` (int u8)}>>")]]
+[[rc::args("p2 @&own<array<u8, {elts `at_type` (int u8)}>>")]]
 
 int strcmp (const char *p1, const char *p2) {
   // storing pointers in s1 and s2.
