@@ -1,12 +1,24 @@
 #include <stdbool.h>
+#include <refinedc.h>
 
 
-int arr[26];
-// populated with ascii number representations
-for(int i = 65; i <= 90; i++){
-    arr[i - 65] = i;
+
+
+
+int strcmp(const char *s1, const char *s2) {
+  int ret = 0;
+
+  while (!(ret = *(unsigned char *) s1 - *(unsigned char *) s2) && *s2) ++s1, ++s2;
+
+  if (ret < 0)
+
+    ret = -1;
+  else if (ret > 0)
+
+    ret = 1 ;
+
+  return ret;
 }
-
 
 
 

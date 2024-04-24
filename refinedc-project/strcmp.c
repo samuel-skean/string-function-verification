@@ -14,27 +14,39 @@
    License along with the GNU C Library; if not, see
    <https://www.gnu.org/licenses/>.  */
 #include <string.h>
+#include <refinedc.h>
+#include <stdio.h>
+
+
+int arr[26];
+// populated with ascii number representations
+for(int i = 65; i <= 90; i++){
+    arr[i - 65] = i;
+}
 
 /* Compare S1 and S2, returning less than, equal to or
    greater than zero if S1 is lexicographically less than,
    equal to or greater than S2.  */
 [[rc::parameters("p1 : loc", "p2 : loc")]]
 [[rc::args("p1 @ &own<int<u8>>", "p2 @ &own<int<u8>>")]]
-int
-strcmp (const char *p1, const char *p2)
-{
+
+
+
+int strcmp (const char *p1, const char *p2) {
+  // storing pointers in s1 and s2.
   const unsigned char *s1 = (const unsigned char *) p1;
   const unsigned char *s2 = (const unsigned char *) p2;
   unsigned char c1, c2;
-  do
-    {
+
+  do {
       c1 = (unsigned char) *s1;
       c2 = (unsigned char) *s2;
       s1++;
       s2++;
       if (c1 == 0)
         return c1 - c2;
-    }
+  }
   while (c1 == c2);
+
   return c1 - c2;
 }
