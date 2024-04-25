@@ -17,19 +17,27 @@ Compares the first @var{n} bytes of two strings, returning a value as
 
 #include <stddef.h>
 
+@rc::import strncmp.v from proofs.strncmp.v
 
 // annotations
+// these parameters are supposed to represent the two arrays,
+// with n being natural numbers for both.
+// check if defining n in arguments differently changes things.
 [[rc::parameters("s1 : loc", "elts : {list Z}", "n : nat")]]
 [[rc::parameters("s2 : loc", "elts : {list Z}", "n : nat")]]
-[[rc::args("ar @ &own<array<u8, {elts `at_type` (int u8)}>>", "n @ int<u8>")]]
-[[rc::args("ar @ &own<array<u8, {elts `at_type` (int u8)}>>", "n @ int<u8>")]]
+
+[[rc::args("s1 @ &own<array<u8, {elts `at_type` (int u8)}>>", "s1 @ &own<array<u8, {elts `at_type` (int u8)}>>", "n @ int<u8>")]]
 
 // make sure that they're arrays of one-byte ints
 [[rc::ensures("own p1 : array<u8, {elts `at_type` (int u8)}>")]]
 [[rc::ensures("own p1 : array<u8, {elts `at_type` (int u8)}>")]]
+// return, using refinement type '@'
+[[rc::returns("i @ int<u8>")]]
 
-// 
-
+// tactics to apply from strncmp.v
+[[rc::tactics("all: try rewrite compare_strings; solve_goal).")]]
+// alternatively use the ascii version for faster performance, although it might not be necessary
+[[rc::tactics("all: try rewrite eq_string; solve_goal).")]]
 int strncmp(const char *s1, const char *s2, register size_t n)
 {
   register unsigned char u1, u2;
