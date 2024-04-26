@@ -1,6 +1,9 @@
-[31m[strncmp.c:20:14-21] Frontend error.
-unexpected token after 'import' and before 'strncmp'
-parsing "attribute": seen "attribute_token", expecting "option(attribute_argument_clause)"
-[0m[[rc::import strncmp.v from proofs.strncmp.v]]
-             ^~~~~~~ 
+Entering directory '/home/samuels/refinedc-projects/string-function-verification/refinedc-project'
+        coqc proofs/strncmp/generated_spec.{glob,vo} (exit 1)
+File "./proofs/strncmp/generated_spec.v", line 3, characters 0-44:
+Error: Cannot find a physical path bound to logical path
+strncmp with prefix proofs.srncmp.v.
+
+Leaving directory '/home/samuels/refinedc-projects/string-function-verification/refinedc-project'
+[31mThe call to [dune] returned with error code 1.
 [0m
