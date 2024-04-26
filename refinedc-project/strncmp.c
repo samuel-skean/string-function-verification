@@ -17,7 +17,7 @@ Compares the first @var{n} bytes of two strings, returning a value as
 
 #include <stddef.h>
 
-@rc::import strncmp.v from proofs.strncmp.v
+[[rc::import strncmp.v from proofs.strncmp.v]]
 
 // annotations
 // these parameters are supposed to represent the two arrays,
