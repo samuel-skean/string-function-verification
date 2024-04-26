@@ -14,10 +14,16 @@ Compares the first @var{n} bytes of two strings, returning a value as
 @end deftypefn
 
 */
+Import Arith.
+Import Ascii.
+Import Bool.
+Import Coq.Strings.Byte.
+
+Import Coq.Strings.String.
 
 #include <stddef.h>
 
-[[rc::import strncmp.v from proofs.strncmp.v]]
+// [[rc::import strncmp.v from proofs.strncmp.v]]
 
 // annotations
 // these parameters are supposed to represent the two arrays,
