@@ -1,5 +1,6 @@
-[31m[strncmp.c:20:1:] Frontend error.
-invalid symbol
-[0m@rc::import strncmp.v from proofs.strncmp.v
-^
+[31m[strncmp.c:20:14-21] Frontend error.
+unexpected token after 'import' and before 'strncmp'
+parsing "attribute": seen "attribute_token", expecting "option(attribute_argument_clause)"
+[0m[[rc::import strncmp.v from proofs.strncmp.v]]
+             ^~~~~~~ 
 [0m
