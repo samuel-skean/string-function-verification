@@ -1,0 +1,5 @@
+[31m[strncmp.c:20:1:] Frontend error.
+invalid symbol
+[0m@rc::import strncmp.v from proofs.strncmp.v
+^
+[0m
