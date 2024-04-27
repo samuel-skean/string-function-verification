@@ -20,5 +20,13 @@ string function in order to prove its correctness.
 - successfully proved correctness of a small int comparison C program.
 
 Future work/Unfinished:
-- Successfully check the strncmp.c function. We ran into issues with annotations and
+- Successfully checking the strncmp.c function. We ran into issues with annotations and
 importing files, and there is limited documentation online for our specific problems.
+
+Wrap-up:
+We learned a great deal about using an experimental, powerful automated
+reasoning tool for C programs. We also learned, as always, to get started
+sooner and to expect many set-backs. But as a capstone to this class, being
+aware of tools like this and Prusti, and having some knowledge of how to get
+them to work, is probably the best takeaway we could've expected. Proving
+correctness, or even coming close, is a powerful drug.
